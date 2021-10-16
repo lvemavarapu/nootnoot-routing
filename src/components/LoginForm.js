@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-const LoginForm = ({activateUser}) =>{
+
+const LoginForm = ({history,activateUser}) =>{
     const initialFormData = {
         email: "",
         password: ""
@@ -12,6 +13,7 @@ const LoginForm = ({activateUser}) =>{
         e.preventDefault()
         //console.log(formData.email)
         activateUser(formData.email)
+        return history.push("/") // add this line
     }
     function handleFormData(e){
         //console.log(e.target)
